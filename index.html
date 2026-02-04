@@ -52,11 +52,16 @@ const apiUrl="https://api.openweathermap.org/data/2.5/weather?&units=metric&q="
         document.querySelector(".wind").innerHTML =data.wind.speed + ' km/h';
 
         if(data.weather[0].main == "clouds"){
-            weatherIcon.src="images/clouds.png";
+            weatherIcon.src="images/cloud.png";
 
-        }else if(data.weather[0].main==="clear"){
+        }else if(data.weather[0].main =="clear"){
             weatherIcon.src="images/clear.png";
-        }else if()
+        }else if(data.weather[0].main == "rain"){
+            weatherIcon.src="images/rain.png";
+        }else if(data.weather[0].main ==""){
+
+        }
+        document.querySelector(".weather").style.display ="block"; 
     } 
     
     searchBtn.addEventListener("click", () => {
